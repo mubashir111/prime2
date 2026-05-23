@@ -1,0 +1,1616 @@
+/* 
+   PRIM & Associates - Professional Design System
+   Refined Typography, Sophisticated Palette & Glassmorphism
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+:root {
+    /* Color Palette - New Light Theme */
+    --prim-bg-cream: #f8f6f2;
+    --prim-primary: #0f4b6b; /* deeper navy for stronger brand presence */
+    --prim-accent-gold: #135989; /* existing accent (kept for compatibility) */
+    --prim-accent-gold-rgb: 19, 89, 137;
+    --prim-dark-slate: #2d3e50;
+    --prim-text-muted: #6e7175;
+    --prim-badge-bg: #f1ece3;
+    --prim-white: #FFFFFF;
+    --prim-glass-bg: rgba(255, 255, 255, 0.7);
+    --prim-glass-border: rgba(0, 0, 0, 0.05);
+
+    /* Typography scale */
+    --prim-h1: 64px;
+    --prim-h2: 40px;
+    --prim-h3: 24px;
+    --prim-body: 17px;
+
+    /* Typography */
+    --prim-font-body: 'Inter', sans-serif;
+    --prim-font-heading: 'DM Sans', sans-serif;
+
+    /* Effects */
+    --prim-shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --prim-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --prim-border-radius: 12px;
+    --prim-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prim-accent {
+    color: var(--prim-accent-gold) !important;
+}
+
+/* Global Animation Fix */
+.animated {
+    animation-duration: 1s !important;
+}
+
+/* Animations */
+@keyframes primFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes primScaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes primSlowZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.12);
+    }
+}
+
+/* Global Overrides */
+body {
+    font-family: var(--prim-font-body) !important;
+    background-color: var(--prim-bg-cream) !important;
+    color: var(--prim-dark-slate) !important;
+    overflow-x: hidden !important;
+    /* Global overflow prevention */
+}
+
+/* Global Responsive Images */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+
+/* Nav Logo - same size as index page */
+.guten-Y7ASQF img {
+    width: 250px !important;
+    height: auto !important;
+    max-width: none !important;
+}
+
+/* About Section - Premium Visual Enhancement */
+.guten-element.guten-WujYsu {
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    background: linear-gradient(135deg, #f0f6fb 0%, #f8f6f2 40%, #eef4fa 100%) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Decorative radial glow behind right image column */
+.guten-element.guten-WujYsu::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(19, 89, 137, 0.08) 0%, transparent 68%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Decorative bottom-left accent */
+.guten-element.guten-WujYsu::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(77, 170, 87, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Left column reduced padding for balance */
+.guten-nI3VFK>.sticky-wrapper>.guten-column-wrapper,
+.guten-nI3VFK>.guten-column-wrapper {
+    padding-right: 40px;
+}
+
+/* Heading - bolder & larger */
+.guten-pCnxvl {
+    font-size: var(--prim-h1) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.02em !important;
+    font-weight: 700 !important;
+}
+
+/* Hero specific scale and subheading */
+.guten-U9CNeU .guten-jYTq4b,
+.guten-U9CNeU .guten-pCnxvl,
+.guten-U9CNeU h1 {
+    font-size: var(--prim-h1) !important;
+    line-height: 1.03 !important;
+    color: var(--prim-dark-slate) !important;
+}
+
+.guten-U9CNeU p,
+.guten-U9CNeU .hero-subhead {
+    font-size: var(--prim-body) !important;
+    color: var(--prim-text-muted) !important;
+    margin-top: 18px !important;
+    max-width: 680px !important;
+}
+
+/* CTA trust stats (utility) shown beneath hero CTAs */
+.prim-trust-row {
+    display: flex !important;
+    gap: 20px !important;
+    align-items: center !important;
+    margin-top: 18px !important;
+}
+.prim-trust-row .prim-trust-item {
+    background: transparent !important;
+    color: var(--prim-dark-slate) !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+
+/* Icon boxes - premium white cards & equal height layout */
+.guten-k3KW33>.guten-container,
+.guten-mc48Si>.guten-container {
+    display: flex !important;
+    align-items: stretch !important;
+    flex-wrap: wrap !important;
+}
+
+.guten-k3KW33 .guten-column,
+.guten-mc48Si .guten-column {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.guten-k3KW33 .guten-column-wrapper,
+.guten-mc48Si .guten-column-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    height: 100% !important;
+}
+
+.guten-aD6fMQ,
+.guten-O1NI6i,
+.guten-1Tt21A,
+.guten-IbW81d {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    height: 100% !important;
+}
+
+.guten-aD6fMQ .guten-icon-box-wrapper,
+.guten-O1NI6i .guten-icon-box-wrapper,
+.guten-1Tt21A .guten-icon-box-wrapper,
+.guten-IbW81d .guten-icon-box-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    flex: 1 1 auto !important;
+    height: 100% !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(8px) !important;
+    border-radius: 14px !important;
+    padding: 22px 24px !important;
+    box-shadow: 0 4px 20px rgba(19, 89, 137, 0.08) !important;
+    border: 1px solid rgba(19, 89, 137, 0.1) !important;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    margin-bottom: 6px !important;
+}
+
+.guten-aD6fMQ .guten-icon-box-wrapper:hover,
+.guten-O1NI6i .guten-icon-box-wrapper:hover,
+.guten-1Tt21A .guten-icon-box-wrapper:hover,
+.guten-IbW81d .guten-icon-box-wrapper:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 35px rgba(19, 89, 137, 0.18) !important;
+    border-color: rgba(19, 89, 137, 0.25) !important;
+    background: #ffffff !important;
+}
+
+/* Hide the tick icons entirely */
+.guten-aD6fMQ .icon-box-header,
+.guten-O1NI6i .icon-box-header,
+.guten-1Tt21A .icon-box-header,
+.guten-IbW81d .icon-box-header {
+    display: none !important;
+}
+
+/* Icon box title */
+.guten-aD6fMQ .title,
+.guten-O1NI6i .title,
+.guten-1Tt21A .title,
+.guten-IbW81d .title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #135989 !important;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+}
+
+/* Icon box description */
+.guten-aD6fMQ .icon-box-description,
+.guten-O1NI6i .icon-box-description,
+.guten-1Tt21A .icon-box-description,
+.guten-IbW81d .icon-box-description {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: #4a5568 !important;
+    margin: 0 !important;
+}
+
+
+
+/* About Page — Our Vision & Our Mission Tick Removal & Layout */
+.guten-HtBVZ6 .icon-box-header,
+.guten-GauFEB .icon-box-header {
+    display: none !important;
+}
+
+.guten-HtBVZ6 .title,
+.guten-GauFEB .title {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #135989 !important;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+}
+
+.guten-HtBVZ6 .icon-box-description,
+.guten-GauFEB .icon-box-description {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    color: #4a5568 !important;
+    margin: 0 !important;
+}
+
+/* About Section Buttons Alignment & Spacing */
+/* Hide the default horizontal divider to create a clean modern layout */
+.guten-NbmtAt {
+    display: none !important;
+}
+
+/* Align and space the buttons container */
+.guten-oU97QY,
+.guten-DH9rp0 {
+    margin-top: 32px !important;
+    margin-bottom: 12px !important;
+    width: 100% !important;
+}
+
+.guten-oU97QY .guten-inner-wrap,
+.guten-DH9rp0 .guten-inner-wrap {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 16px !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Ensure button wrappers behave in flex layout */
+.guten-Criys4,
+.guten-fYnby1,
+.guten-119oBu,
+.guten-azMzDw {
+    display: inline-flex !important;
+    margin: 0 !important;
+    width: auto !important;
+}
+
+/* Premium uniform button styles */
+.guten-Criys4 .guten-button,
+.guten-fYnby1 .guten-button,
+.guten-119oBu .guten-button,
+.guten-azMzDw .guten-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 48px !important;
+    padding: 0 22px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    border-radius: 999px !important; /* pill */
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+/* Primary Button Styling (More About Us / Our Services) */
+.guten-Criys4 .guten-button,
+.guten-119oBu .guten-button {
+    background-color: #135989 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(19, 89, 137, 0.2) !important;
+    border: 1px solid transparent !important;
+}
+
+.guten-Criys4 .guten-button:hover,
+.guten-Criys4 .guten-button:focus,
+.guten-119oBu .guten-button:hover,
+.guten-119oBu .guten-button:focus {
+    background-color: #0e4468 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(19, 89, 137, 0.35) !important;
+}
+
+/* Secondary Button Styling (Book A Call) */
+.guten-fYnby1 .guten-button,
+.guten-azMzDw .guten-button {
+    background-color: transparent !important;
+    color: #135989 !important;
+    border: 2px solid #135989 !important;
+    box-shadow: none !important;
+    height: 48px !important;
+    padding: 0 20px !important;
+    border-radius: 999px !important; /* outline pill */
+}
+
+.guten-fYnby1 .guten-button:hover,
+.guten-fYnby1 .guten-button:focus,
+.guten-azMzDw .guten-button:hover,
+.guten-azMzDw .guten-button:focus {
+    background-color: #135989 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(19, 89, 137, 0.25) !important;
+}
+
+
+/* Hero Section Mobile Overflow Fixes */
+
+/* Hero Section Mobile Overflow & Navigation Fixes */
+@media (max-width: 768px) {
+
+    /* Reset negative margins that cause horizontal scroll */
+    .guten-YD8M4R,
+    .guten-BVSaI0,
+    .guten-QYTCh9,
+    .guten-element.guten-YD8M4R,
+    .guten-element.guten-BVSaI0,
+    .guten-element.guten-QYTCh9 {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    /* Prevent specific hero container overflow without blocking fixed menus */
+    .guten-U9CNeU .guten-container {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Force hero buttons into vertical stack with elegant spacing */
+    .guten-s0sRgO.flex,
+    .guten-element.guten-s0sRgO {
+        display: block !important;
+        width: 100% !important;
+        margin-top: 24px !important;
+    }
+
+    .guten-s0sRgO .guten-inner-wrap {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .guten-element.guten-N0hslg {
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .guten-element.guten-N0hslg,
+    .guten-element.guten-9Ma3AF {
+        width: fit-content !important;
+        flex: 0 1 auto !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .guten-N0hslg.guten-button-wrapper .guten-button,
+    .guten-9Ma3AF.guten-button-wrapper .guten-button {
+        padding: 12px 24px !important;
+        height: 46px !important;
+        /* Uniform height to ensure same size */
+        white-space: nowrap !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        font-size: 15px !important;
+    }
+
+    /* Premium Mobile Menu (Gutenverse) Fixes */
+    .gutenverse-menu-wrapper {
+        z-index: 999999 !important;
+        background: #ffffff !important;
+        /* Solid white for better contrast */
+        box-shadow: 10px 0 40px rgba(0, 0, 0, 0.15) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        /* Identity panel on top, menu below */
+        height: 100vh !important;
+        width: 85% !important;
+        /* Slightly more room for items */
+        max-width: 360px !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: -110% !important;
+        /* Start off-screen */
+        transition: left 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    }
+
+    .gutenverse-menu-wrapper.active {
+        left: 0 !important;
+    }
+
+    .guten-nav-overlay {
+        z-index: 999998 !important;
+        background: rgba(0, 50, 100, 0.2) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease !important;
+    }
+
+    .guten-nav-overlay.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* Identity Panel (Logo + Close) */
+    .gutenverse-nav-identity-panel {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 24px 20px !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+        background: #ffffff !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .gutenverse-close-menu {
+        position: static !important;
+        margin: 0 !important;
+        color: var(--prim-dark-slate) !important;
+        font-size: 24px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Menu Items */
+    .gutenverse-menu-container {
+        flex: 1 !important;
+        overflow-y: auto !important;
+        padding: 20px 0 !important;
+    }
+
+    .gutenverse-menu li a {
+        font-family: var(--prim-font-heading) !important;
+        font-size: 18px !important;
+        font-weight: 500 !important;
+        color: var(--prim-dark-slate) !important;
+        padding: 16px 25px !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.03) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .gutenverse-menu li a:hover {
+        padding-left: 32px !important;
+        color: var(--prim-accent-gold) !important;
+        background: rgba(19, 89, 137, 0.03) !important;
+    }
+
+    /* Hamburger Button Refinement */
+    .gutenverse-hamburger-menu {
+        background: var(--prim-white) !important;
+        border: 1px solid var(--prim-glass-border) !important;
+        border-radius: 8px !important;
+        padding: 10px !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .gutenverse-hamburger-menu i {
+        color: var(--prim-accent-gold) !important;
+        font-size: 20px !important;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--prim-dark-slate) !important;
+    font-family: var(--prim-font-heading) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+}
+
+/* Service Page Hero Header - force white text on blue background */
+.section-wrapper[style*="background: #135989"] h1,
+.section-wrapper[style*="background:#135989"] h1 {
+    color: #ffffff !important;
+}
+
+
+/* Force Global Section Backgrounds & Eliminate Blue Vignettes */
+.wp-block-gutenverse-section:not(.prim-glass-nav)>.guten-background-overlay,
+.guten-section:not(.prim-glass-nav)>.guten-background-overlay,
+body section:not(.prim-glass-nav),
+.guten-background-overlay {
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+/* Ensure section containers have the correct background */
+.wp-block-gutenverse-section,
+.guten-section,
+body section {
+    background-color: var(--prim-bg-cream) !important;
+}
+
+/* Force paragraph legibility on all cream sections */
+.wp-block-gutenverse-section:not(.guten-s1sLnH) p,
+.guten-section:not(.guten-s1sLnH) p,
+.wp-block-gutenverse-section:not(.guten-s1sLnH) .icon-box-description {
+    color: var(--prim-text-muted) !important;
+}
+
+.wp-block-gutenverse-section:not(.guten-s1sLnH) .fun-fact-inner .number,
+.wp-block-gutenverse-section:not(.guten-s1sLnH) .fun-fact-inner .super {
+    color: var(--prim-dark-slate) !important;
+}
+
+/* Premium Form Design on Cream Backgrounds */
+.wp-block-gutenverse-section:not(.guten-s1sLnH) .guten-form-builder,
+.guten-section:not(.guten-s1sLnH) .guten-form-builder {
+    background-color: var(--prim-white) !important;
+    padding: 32px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 40px rgba(19, 89, 137, 0.06) !important;
+}
+
+.wp-block-gutenverse-section:not(.guten-s1sLnH) .guten-form-input,
+.guten-section:not(.guten-s1sLnH) .guten-form-input {
+    margin-bottom: 20px !important;
+}
+
+.wp-block-gutenverse-section:not(.guten-s1sLnH) .input-label,
+.guten-section:not(.guten-s1sLnH) .input-label {
+    color: var(--prim-dark-slate) !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+}
+
+.wp-block-gutenverse-section:not(.guten-s1sLnH) .gutenverse-input,
+.guten-section:not(.guten-s1sLnH) .gutenverse-input {
+    background-color: #f4f7f9 !important;
+    color: var(--prim-dark-slate) !important;
+    border: 1px solid rgba(45, 62, 80, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 12px 16px !important;
+    font-size: 15px !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    width: 100% !important;
+}
+
+.wp-block-gutenverse-section:not(.guten-s1sLnH) .gutenverse-input:focus,
+.guten-section:not(.guten-s1sLnH) .gutenverse-input:focus {
+    border-color: #135989 !important;
+    box-shadow: 0 0 0 4px rgba(19, 89, 137, 0.15) !important;
+    outline: none !important;
+    transform: translateY(-2px) !important;
+}
+
+.wp-block-gutenverse-section:not(.guten-s1sLnH) .gutenverse-input::placeholder,
+.guten-section:not(.guten-s1sLnH) .gutenverse-input::placeholder {
+    color: var(--prim-text-muted) !important;
+    opacity: 0.6 !important;
+}
+
+/* Form Responsive Overrides */
+@media (max-width: 768px) {
+
+    /* Compress form padding on mobile */
+    .wp-block-gutenverse-section:not(.guten-s1sLnH) .guten-form-builder,
+    .guten-section:not(.guten-s1sLnH) .guten-form-builder {
+        padding: 24px 16px !important;
+        border-radius: 8px !important;
+    }
+
+    /* Force mobile inputs to stack 100% width and reduce margin */
+    .wp-block-gutenverse-section:not(.guten-s1sLnH) .guten-form-input,
+    .guten-section:not(.guten-s1sLnH) .guten-form-input {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        margin-bottom: 20px !important;
+        float: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Slightly smaller target for input fields */
+    .wp-block-gutenverse-section:not(.guten-s1sLnH) .gutenverse-input,
+    .guten-section:not(.guten-s1sLnH) .gutenverse-input {
+        padding: 10px 14px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* Specialized Section: Clients / Testimonials */
+/* Usually has a dark ID/class in gutenverse. We force it to beige. */
+.guten-CHggFS,
+.guten-CHggFS .guten-background-overlay,
+.guten-CHggFS:not(.background-animated) {
+    background-color: var(--prim-bg-cream) !important;
+    background-image: none !important;
+}
+
+.section-wrapper .wp-block-gutenverse-section>.guten-background-overlay {
+    background-color: transparent !important;
+}
+
+/* Glassmorphism & Specialized Cards */
+.prim-glass-card {
+    background: var(--prim-glass-bg) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--prim-glass-border) !important;
+    box-shadow: var(--prim-shadow-sm);
+}
+
+.prim-glass-nav {
+    background: var(--prim-bg-cream) !important;
+    backdrop-filter: blur(15px);
+    border-bottom: none !important;
+}
+
+/* Nav alignment: vertically center Book A Call button column */
+.prim-glass-nav .hide-tablet.hide-mobile .guten-column-wrapper,
+.prim-glass-nav .guten-b01p9O {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    margin: 0 !important;
+}
+
+.prim-glass-nav .guten-b01p9O .guten-button {
+    margin: 0 !important;
+    vertical-align: middle !important;
+}
+
+/* Stronger override: target the nav column wrapper used in templates to ensure true vertical centering.
+   This is intentionally specific to override page-level inline styles. */
+.prim-glass-nav .guten-container .wp-block-gutenverse-column.hide-tablet.hide-mobile,
+.prim-glass-nav .guten-container .wp-block-gutenverse-column.hide-tablet.hide-mobile .guten-column-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important; /* keep button to the right */
+    min-height: 60px !important;
+    padding: 0 !important;
+}
+
+.prim-glass-nav .guten-container .wp-block-gutenverse-column.hide-tablet.hide-mobile .guten-element.guten-button-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+}
+
+.prim-glass-nav .guten-container .guten-b01p9O .guten-button {
+    margin: 0 !important;
+    transform: none !important;
+}
+
+/* Service Boxes & Informational Cards */
+.guten-6pYJEa,
+.guten-aXfuVV,
+.guten-IfQgPd {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+    border-radius: var(--prim-border-radius) !important;
+    transition: all 0.3s ease !important;
+}
+
+.guten-6pYJEa:hover,
+.guten-aXfuVV:hover,
+.guten-IfQgPd:hover {
+    border: 1px solid var(--prim-accent-gold) !important;
+    transform: translateY(-8px) !important;
+    box-shadow: 0 22px 48px rgba(19, 89, 137, 0.18) !important;
+}
+
+/* Icon Gradients - Uniform Dark Palette */
+.icon.bg-style-gradient,
+.icon-style-gradient {
+    background: linear-gradient(135deg, var(--prim-dark-slate) 0%, #1a2639 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.icon.bg-style-gradient i {
+    -webkit-text-fill-color: initial !important;
+}
+
+/* Service Box & Global Button Components */
+.guten-button {
+    background-color: var(--prim-accent-gold) !important;
+    color: #ffffff !important;
+    height: 48px !important;
+    padding: 0 22px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    border: none !important;
+    border-radius: 999px !important; /* pill default for nav/buttons without more specific overrides */
+    transition: var(--prim-transition) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    box-shadow: 0 6px 18px rgba(var(--prim-accent-gold-rgb), 0.12) !important;
+}
+
+.guten-button i,
+.guten-button span {
+    color: inherit !important;
+}
+
+.guten-button:hover,
+.guten-button:focus {
+    background-color: rgba(var(--prim-accent-gold-rgb), 0.95) !important;
+    color: var(--prim-white) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 30px rgba(var(--prim-accent-gold-rgb), 0.22) !important;
+}
+
+/* Nav-specific primary button (ensures Book A Call and similar nav buttons look pill-shaped and prominent) */
+.prim-glass-nav .guten-b01p9O .guten-button,
+.prim-glass-nav .guten-b01p9O .guten-button i {
+    padding: 0 20px !important;
+    border-radius: 999px !important;
+    font-size: 14px !important;
+    box-shadow: 0 8px 24px rgba(var(--prim-accent-gold-rgb), 0.18) !important;
+}
+
+/* Keep icons/text inheriting color on hover in nav */
+.prim-glass-nav .guten-b01p9O .guten-button:hover i,
+.prim-glass-nav .guten-b01p9O .guten-button:hover span {
+    color: inherit !important;
+}
+
+/* Footer & Global Visibility Fixes */
+.guten-s1sLnH,
+.section-wrapper[data-id="s1sLnH"] {
+    background-color: var(--prim-dark-slate) !important;
+    color: var(--prim-white) !important;
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
+}
+
+.guten-s1sLnH .guten-background-overlay {
+    background-color: var(--prim-dark-slate) !important;
+}
+
+.guten-s1sLnH h1,
+.guten-s1sLnH h2,
+.guten-s1sLnH h3,
+.guten-s1sLnH h4,
+.guten-s1sLnH h5,
+.guten-s1sLnH h6 {
+    color: var(--prim-accent-gold) !important;
+}
+
+.guten-s1sLnH p,
+.guten-s1sLnH span,
+.guten-s1sLnH .list-text,
+.guten-s1sLnH .text-content-inner p {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.guten-s1sLnH a {
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: var(--prim-transition) !important;
+}
+
+.guten-s1sLnH a:hover {
+    color: var(--prim-accent-gold) !important;
+}
+
+.guten-s1sLnH .guten-social-icon a {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: var(--prim-white) !important;
+}
+
+.guten-s1sLnH .guten-social-icon a:hover {
+    background: var(--prim-accent-gold) !important;
+    color: var(--prim-dark-slate) !important;
+}
+
+.icon-style-color {
+    color: var(--prim-dark-slate) !important;
+}
+
+/* Custom Highlight Consistency */
+.guten-text-highlight {
+    background-image: linear-gradient(to right, var(--prim-accent-gold) 0%, var(--prim-accent-gold) 100%) !important;
+    background-size: 100% 8px !important;
+    background-repeat: no-repeat !important;
+    background-position: 0 95% !important;
+    text-decoration: none !important;
+}
+
+/* Scroll Animations */
+.prim-fade-elem {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.prim-fade-elem.prim-in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Badge Highlight Shine Animation */
+@keyframes prim-shine-effect {
+    0% {
+        transform: translateX(-150%) skewX(-25deg);
+    }
+
+    15%,
+    100% {
+        transform: translateX(200%) skewX(-25deg);
+    }
+}
+
+.prim-animate-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.prim-animate-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: translateX(-150%) skewX(-25deg);
+    animation: prim-shine-effect 4s infinite linear;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Premium GSAP Preloader */
+#prim-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--prim-bg-cream);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000000;
+    overflow: hidden;
+}
+
+.preloader-content {
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+}
+
+.preloader-logo {
+    width: 220px;
+    height: auto;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.preloader-bar-container {
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.preloader-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--prim-accent-gold);
+    box-shadow: 0 0 10px var(--prim-accent-gold);
+}
+
+/* Premium Navbar Dropdown */
+@media screen and (min-width: 1025px) {
+    .gutenverse-menu li.menu-item-has-children {
+        position: relative;
+    }
+
+    .gutenverse-menu li.menu-item-has-children .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 260px;
+        background: #ffffff !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+        border-radius: 8px !important;
+        padding: 15px 0 !important;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(15px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 9999;
+        list-style: none !important;
+        display: block !important;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .gutenverse-menu li.menu-item-has-children:hover>.sub-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .gutenverse-menu .sub-menu li {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .gutenverse-menu .sub-menu li a {
+        padding: 12px 25px !important;
+        font-size: 14px !important;
+        color: var(--prim-dark-slate) !important;
+        display: block !important;
+        transition: all 0.2s ease !important;
+        text-decoration: none !important;
+        white-space: nowrap;
+        background: transparent !important;
+        border: none !important;
+        text-align: left !important;
+        font-weight: 500 !important;
+    }
+
+    .gutenverse-menu .sub-menu li a:hover {
+        background: rgba(19, 89, 137, 0.05) !important;
+        color: var(--prim-accent-gold) !important;
+        padding-left: 32px !important;
+    }
+
+    /* Chevron Indicator */
+    .gutenverse-menu li.menu-item-has-children>a::after {
+        content: '\f078';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 10px;
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+        opacity: 0.7;
+        display: inline-block;
+    }
+
+    /* Hide default plugin indicator to prevent double arrows */
+    .gutenverse-menu li.menu-item-has-children>a i {
+        display: none !important;
+    }
+
+    .gutenverse-menu li.menu-item-has-children:hover>a::after {
+        transform: rotate(180deg);
+        color: #135989;
+        opacity: 1;
+    }
+}
+
+/* Mobile Dropdown Adjustments */
+@media screen and (max-width: 1024px) {
+    .gutenverse-menu .sub-menu {
+        padding-left: 20px !important;
+        list-style: none !important;
+    }
+
+    .gutenverse-menu .sub-menu li a {
+        font-size: 16px !important;
+        padding: 10px 0 !important;
+        opacity: 0.8;
+    }
+
+    /* Responsive Horizontal Padding Overrides for Tablet */
+    .guten-element.guten-hdaRTv {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    .guten-element.guten-WujYsu {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+}
+
+/* Navbar Layout Fixes */
+.guten-4WRTsx {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: 300px !important;
+    min-width: 250px !important;
+}
+
+.guten-zLIHWA {
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.gutenverse-menu {
+    justify-content: flex-end !important;
+    width: 100% !important;
+}
+
+/* Bulletproof CSS Entrance Animations */
+.guten-section h1,
+.guten-section h2,
+.guten-section h3,
+.guten-section h4,
+.guten-section p,
+.guten-section .guten-button,
+.guten-section a:not(.guten-image-wrapper),
+.prim-glass-card,
+.guten-icon-box-wrapper {
+    animation: primSafeFadeInUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes primSafeFadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* GDPR Form Fix to prevent weird column splitting and text wrapping */
+.guten-gdpr-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    gap: 10px !important;
+    column-count: auto !important;
+    columns: auto !important;
+}
+
+.guten-gdpr-input-wrapper {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    height: 22px !important;
+    /* matches font line height */
+}
+
+.guten-gdpr-wrapper .gdpr-label {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    column-count: auto !important;
+    columns: auto !important;
+    text-align: left !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    color: #4a5568 !important;
+}
+
+.guten-gdpr-wrapper .gdpr-label a {
+    display: inline !important;
+    color: #135989 !important;
+    text-decoration: underline !important;
+    font-weight: 600 !important;
+}
+
+/* ==========================================================================
+   MEGA MENU & SERVICES UX REDESIGN SYSTEM - PREMIUM UPGRADE
+   ========================================================================== */
+
+/* 1. Desktop Mega Menu Layout */
+@media screen and (min-width: 1025px) {
+
+    /* Main container of the Services dropdown */
+    .gutenverse-menu li.menu-item-has-children .sub-menu.mega-menu {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) translateY(15px) !important;
+        width: 860px !important;
+        min-width: 860px !important;
+        padding: 30px !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 25px !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(24px) !important;
+        -webkit-backdrop-filter: blur(24px) !important;
+        border: 1px solid rgba(19, 89, 137, 0.08) !important;
+        box-shadow: 0 20px 45px rgba(19, 89, 137, 0.12) !important;
+        border-radius: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    .gutenverse-menu li.menu-item-has-children:hover>.sub-menu.mega-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateX(-50%) translateY(0) !important;
+    }
+
+    /* Submenu internal nesting structure */
+    .mega-column {
+        display: block !important;
+        width: 100% !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .mega-title {
+        display: block !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        color: #135989 !important;
+        letter-spacing: 0.12em !important;
+        margin-bottom: 15px !important;
+        padding-bottom: 8px !important;
+        border-bottom: 1.5px solid rgba(19, 89, 137, 0.08) !important;
+        font-family: 'DM Sans', sans-serif !important;
+    }
+
+    .mega-column ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+    }
+
+    .mega-column ul li {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .mega-column ul li a {
+        display: block !important;
+        padding: 8px 14px !important;
+        font-size: 13.5px !important;
+        font-weight: 500 !important;
+        color: #4a5568 !important;
+        border-radius: 6px !important;
+        text-decoration: none !important;
+        transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        background: transparent !important;
+        text-align: left !important;
+        white-space: normal !important;
+    }
+
+    .mega-column ul li a:hover {
+        background: rgba(19, 89, 137, 0.05) !important;
+        color: #135989 !important;
+        padding-left: 18px !important;
+        transform: translateX(4px) !important;
+    }
+}
+
+/* 2. Responsive/Mobile Dropdown Optimization */
+@media screen and (max-width: 1024px) {
+    .gutenverse-menu .sub-menu.mega-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 10px 10px 10px 25px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        position: static !important;
+        width: auto !important;
+    }
+
+    .mega-column {
+        width: 100% !important;
+    }
+
+    .mega-title {
+        display: block !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        color: #135989 !important;
+        letter-spacing: 0.08em !important;
+        margin-top: 10px !important;
+        margin-bottom: 8px !important;
+        opacity: 0.85 !important;
+    }
+
+    .mega-column ul {
+        list-style: none !important;
+        padding-left: 12px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2px !important;
+    }
+
+    .mega-column ul li a {
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        padding: 8px 0 !important;
+        color: #4a5568 !important;
+        display: block !important;
+        opacity: 0.85 !important;
+        text-decoration: none !important;
+    }
+
+    .mega-column ul li a:hover {
+        color: #135989 !important;
+        opacity: 1 !important;
+    }
+}
+
+/* 3. Services Directory Hub Real-time Filters */
+.services-filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+    animation: primSafeFadeInUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.services-filter-tabs .filter-tab {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(19, 89, 137, 0.15);
+    padding: 10px 24px;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #2d3e50;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+}
+
+.services-filter-tabs .filter-tab:hover {
+    background: rgba(19, 89, 137, 0.05);
+    color: #135989;
+    border-color: #135989;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(19, 89, 137, 0.08);
+}
+
+.services-filter-tabs .filter-tab.active {
+    background: #135989;
+    color: #ffffff;
+    border-color: #135989;
+    box-shadow: 0 8px 18px rgba(19, 89, 137, 0.22);
+}
+
+/* 4. Filter Card Transitions */
+.services-grid .service-card {
+    display: block;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    transition:
+        display 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        background 0.3s ease,
+        box-shadow 0.3s ease !important;
+    transition-behavior: allow-discrete !important;
+}
+
+@starting-style {
+    .services-grid .service-card {
+        opacity: 0;
+        transform: scale(0.95) translateY(12px);
+    }
+}
+
+.services-grid .service-card.filtered-out {
+    animation: none !important;
+    display: none !important;
+    opacity: 0 !important;
+    transform: scale(0.95) translateY(12px) !important;
+    pointer-events: none !important;
+}
+
+/* 5. Subpage Sidebar Navigation Improvements */
+.sidebar-category {
+    margin-bottom: 24px;
+}
+
+.sidebar-category:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-cat-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #135989;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed rgba(19, 89, 137, 0.12);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.sidebar-category .service-list li {
+    margin-bottom: 6px !important;
+}
+
+.sidebar-category .service-list li a {
+    padding: 10px 16px !important;
+    font-size: 13.5px !important;
+    background: #f8fafc !important;
+    color: #4a5568 !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+}
+
+.sidebar-category .service-list li a:hover,
+.sidebar-category .service-list li a.active {
+    background: #135989 !important;
+    color: #ffffff !important;
+    padding-left: 20px !important;
+    box-shadow: 0 4px 10px rgba(19, 89, 137, 0.15) !important;
+}
+
+/* ==========================================================================
+   Global Feature List / Process Section Premium Overrides (Clarity & Opaque Stacking)
+   ========================================================================== */
+.guten-feature-list .feature-list-wrapper .feature-list-item .icon {
+    background: #ffffff !important;
+    border-color: rgba(19, 89, 137, 0.2) !important;
+    position: relative !important;
+    z-index: 2 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.guten-feature-list .feature-list-wrapper .feature-list-item:hover .icon {
+    background: #f0f6fa !important;
+    border-color: #135989 !important;
+    transform: scale(1.08) !important;
+    box-shadow: 0 4px 12px rgba(19, 89, 137, 0.12) !important;
+}
+
+/* Ensure checkmarks and standard icons inside feature lists use brand blue instead of template orange */
+.guten-feature-list .feature-list-wrapper .feature-list-item .icon i {
+    color: #135989 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.guten-feature-list .feature-list-wrapper .feature-list-item:hover .icon i {
+    color: #135989 !important;
+}
+
+/* Global filter to turn orange/peach template list numbers to corporate blue */
+.guten-feature-list .feature-list-wrapper .feature-list-item .icon img {
+    filter: hue-rotate(175deg) brightness(0.8) saturate(1.2) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Blog Page Hero Column Alignment Override */
+.page-id-59 .guten-section>.guten-container>.guten-S3WLcf.guten-column>.sticky-wrapper>.guten-column-wrapper,
+.page-id-59 .guten-section>.guten-container>.guten-S3WLcf.guten-column>.guten-column-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-content: flex-end !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+}
+
+.page-id-59 .guten-slCedE.guten-icon-box .guten-icon-box-wrapper {
+    padding: 9px 0 0 9px !important;
+    border-style: none !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    justify-content: flex-end !important;
+}
+
+.page-id-59 .guten-element.guten-slCedE {
+    margin: 0 0 24px 0 !important;
+    width: 100% !important;
+}
+
+.page-id-59 .guten-4uJj6d {
+    width: 100% !important;
+    max-width: 349px !important;
+    display: block !important;
+    float: none !important;
+    margin-left: auto !important;
+}
+
+.page-id-59 .guten-element.guten-4uJj6d {
+    margin: 0 0 0 auto !important;
+    padding: 0 !important;
+}
+
+.page-id-59 .guten-4uJj6d p {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: right !important;
+}
+
+
+.cta-box {
+    padding: 30px 16px !important;
+}
+
+.sidebar-widget {
+    padding: 20px 15px !important;
+}
+}
+
+/* ==========================================================================
+   Mobile Heading & Layout Full Width Enhancements
+   ========================================================================== */
+@media (max-width: 767px) {
+
+    /* Force gutenverse container to wrap columns properly */
+    html body .guten-container {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Force columns to occupy full width and stack vertically, except hidden ones */
+    html body .guten-column:not(.hide-mobile):not(.hide-tablet),
+    html body .wp-block-gutenverse-column:not(.hide-mobile):not(.hide-tablet),
+    html body .guten-column-wrapper:not(.hide-mobile):not(.hide-tablet),
+    html body .guten-64XdAQ:not(.hide-mobile):not(.hide-tablet),
+    html body .guten-AppQ5s:not(.hide-mobile):not(.hide-tablet) {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        display: block !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Re-enforce hide-mobile and hide-tablet classes to override display block stacking */
+    html body .hide-mobile,
+    html body .hide-tablet,
+    html body .guten-column.hide-mobile,
+    html body .guten-column.hide-tablet,
+    html body .wp-block-gutenverse-column.hide-mobile,
+    html body .wp-block-gutenverse-column.hide-tablet {
+        display: none !important;
+    }
+
+    /* Ensure all headings take full available width without truncation */
+    html body h1.wp-block-gutenverse-heading,
+    html body h2.wp-block-gutenverse-heading,
+    html body h3.wp-block-gutenverse-heading,
+    html body .wp-block-gutenverse-heading,
+    html body .guten-element.guten-rGRZae,
+    html body .guten-element.guten-jYTq4b {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
+        text-align: left !important;
+        box-sizing: border-box !important;
+        font-size: clamp(32px, 8.5vw, 42px) !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Ensure text editors / paragraph containers also take full width */
+    html body .guten-lV44Fo,
+    html body .gutenverse-text-editor {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
+    }
+
+    /* Responsive Horizontal Padding Overrides for Mobile */
+    html body .guten-element.guten-hdaRTv {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    html body .guten-element.guten-WujYsu {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Remove padding right on mobile for about column */
+    html body .guten-nI3VFK>.sticky-wrapper>.guten-column-wrapper,
+    html body .guten-nI3VFK>.guten-column-wrapper {
+        padding-right: 0 !important;
+    }
+}

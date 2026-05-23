@@ -1,0 +1,149 @@
+/* 
+   PRIM & Associates - Base Browser Reset & Global Animations
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+/* Reset and Core Body */
+body {
+    font-family: var(--prim-font-body) !important;
+    background-color: var(--prim-bg-cream) !important;
+    color: var(--prim-dark-slate) !important;
+    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* Image Reset */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Typography elements */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--prim-dark-slate) !important;
+    font-family: var(--prim-font-heading) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+}
+
+/* Transitions */
+a {
+    transition: var(--prim-transition) !important;
+}
+
+/* Custom Highlight Consistency */
+.guten-text-highlight {
+    background-image: linear-gradient(to right, var(--prim-accent-gold) 0%, var(--prim-accent-gold) 100%) !important;
+    background-size: 100% 8px !important;
+    background-repeat: no-repeat !important;
+    background-position: 0 95% !important;
+    text-decoration: none !important;
+}
+
+/* Global Utilities */
+.prim-accent {
+    color: var(--prim-accent-gold) !important;
+}
+
+.animated {
+    animation-duration: 1s !important;
+}
+
+/* Core Animations */
+@keyframes primSafeFadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes primFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes primScaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes primSlowZoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes prim-shine-effect {
+    0% {
+        transform: translateX(-150%) skewX(-25deg);
+    }
+    15%, 100% {
+        transform: translateX(200%) skewX(-25deg);
+    }
+}
+
+/* Scroll Entrance Triggers */
+.prim-fade-elem {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.prim-fade-elem.prim-in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.prim-animate-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.prim-animate-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: translateX(-150%) skewX(-25deg);
+    animation: prim-shine-effect 4s infinite linear;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Bulletproof CSS Entrance Animations */
+.guten-section h1,
+.guten-section h2,
+.guten-section h3,
+.guten-section h4,
+.guten-section p,
+.guten-section .guten-button,
+.guten-section a:not(.guten-image-wrapper),
+.prim-glass-card,
+.guten-icon-box-wrapper {
+    animation: primSafeFadeInUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}

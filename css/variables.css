@@ -1,0 +1,33 @@
+/* 
+   PRIM & Associates - CSS Custom Properties (Variables)
+*/
+
+:root {
+    /* Color Palette - Elegant Brand Theme */
+    --prim-bg-cream: #f8f6f2;
+    --prim-primary: #0f4b6b; /* deeper navy for stronger brand presence */
+    --prim-accent-gold: #135989; /* main accent color */
+    --prim-accent-gold-rgb: 19, 89, 137;
+    --prim-dark-slate: #2d3e50;
+    --prim-text-muted: #6e7175;
+    --prim-badge-bg: #f1ece3;
+    --prim-white: #FFFFFF;
+    --prim-glass-bg: rgba(255, 255, 255, 0.7);
+    --prim-glass-border: rgba(0, 0, 0, 0.05);
+
+    /* Typography Scale */
+    --prim-h1: 64px;
+    --prim-h2: 40px;
+    --prim-h3: 24px;
+    --prim-body: 17px;
+
+    /* Typography Fonts */
+    --prim-font-body: 'Inter', sans-serif;
+    --prim-font-heading: 'DM Sans', sans-serif;
+
+    /* Styling Tokens */
+    --prim-shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --prim-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --prim-border-radius: 12px;
+    --prim-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

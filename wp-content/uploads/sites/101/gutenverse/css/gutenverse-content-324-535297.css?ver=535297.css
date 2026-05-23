@@ -1,0 +1,267 @@
+.guten-WDevJG {
+    columns: 1;
+    color: var(--wp--preset--color--text);
+    font-family: var(--gutenverse-font-family-text);
+    font-size: var(--gutenverse-font-size-text);
+    font-weight: var(--gutenverse-font-weight-text);
+    text-transform: var(--gutenverse-font-transform-text);
+    font-style: var(--gutenverse-font-style-text);
+    text-decoration: var(--gutenverse-font-decoration-text);
+    line-height: var(--gutenverse-font-lineHeight-text);
+    letter-spacing: var(--gutenverse-font-spacing-text);
+}
+
+.guten-element.guten-WDevJG {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 24px;
+    margin-left: 0px;
+}
+
+h1.guten-element.guten-cEIr6r,
+h2.guten-element.guten-cEIr6r,
+h3.guten-element.guten-cEIr6r,
+h4.guten-element.guten-cEIr6r,
+h5.guten-element.guten-cEIr6r,
+h6.guten-element.guten-cEIr6r {
+    color: var(--wp--preset--color--heading);
+    font-family: var(--gutenverse-font-family-h4);
+    font-size: var(--gutenverse-font-size-h4);
+    font-weight: var(--gutenverse-font-weight-h4);
+    text-transform: var(--gutenverse-font-transform-h4);
+    font-style: var(--gutenverse-font-style-h4);
+    text-decoration: var(--gutenverse-font-decoration-h4);
+    line-height: var(--gutenverse-font-lineHeight-h4);
+    letter-spacing: var(--gutenverse-font-spacing-h4);
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.guten-cEIr6r {}
+
+.guten-element.guten-cEIr6r {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+    margin-left: 0px;
+}
+
+.guten-J7Mo3r {
+    columns: 1;
+    color: var(--wp--preset--color--text);
+    font-family: var(--gutenverse-font-family-text);
+    font-size: var(--gutenverse-font-size-text);
+    font-weight: var(--gutenverse-font-weight-text);
+    text-transform: var(--gutenverse-font-transform-text);
+    font-style: var(--gutenverse-font-style-text);
+    text-decoration: var(--gutenverse-font-decoration-text);
+    line-height: var(--gutenverse-font-lineHeight-text);
+    letter-spacing: var(--gutenverse-font-spacing-text);
+}
+
+.guten-element.guten-J7Mo3r {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 24px;
+    margin-left: 0px;
+}
+
+h1.guten-element.guten-kuU91g,
+h2.guten-element.guten-kuU91g,
+h3.guten-element.guten-kuU91g,
+h4.guten-element.guten-kuU91g,
+h5.guten-element.guten-kuU91g,
+h6.guten-element.guten-kuU91g {
+    color: var(--wp--preset--color--heading);
+    font-family: var(--gutenverse-font-family-h4);
+    font-size: var(--gutenverse-font-size-h4);
+    font-weight: var(--gutenverse-font-weight-h4);
+    text-transform: var(--gutenverse-font-transform-h4);
+    font-style: var(--gutenverse-font-style-h4);
+    text-decoration: var(--gutenverse-font-decoration-h4);
+    line-height: var(--gutenverse-font-lineHeight-h4);
+    letter-spacing: var(--gutenverse-font-spacing-h4);
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.guten-kuU91g {}
+
+.guten-element.guten-kuU91g {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+    margin-left: 0px;
+}
+
+.guten-tSqz1Q {
+    columns: 1;
+    color: var(--wp--preset--color--text);
+    font-family: var(--gutenverse-font-family-text);
+    font-size: var(--gutenverse-font-size-text);
+    font-weight: var(--gutenverse-font-weight-text);
+    text-transform: var(--gutenverse-font-transform-text);
+    font-style: var(--gutenverse-font-style-text);
+    text-decoration: var(--gutenverse-font-decoration-text);
+    line-height: var(--gutenverse-font-lineHeight-text);
+    letter-spacing: var(--gutenverse-font-spacing-text);
+}
+
+.guten-element.guten-tSqz1Q {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+    margin-left: 0px;
+}
+
+.guten-VV6gvp:not(.inline-icon-list)>div.guten-icon-list-item:not(div:first-of-type)>a,
+.guten-VV6gvp>.list-wrapper:not(.inline-icon-list)>div.guten-icon-list-item:not(div:first-of-type)>a {
+    margin-top: calc(8px/2);
+}
+
+.guten-VV6gvp:not(.inline-icon-list)>.guten-icon-list-item:not(:last-child),
+.guten-VV6gvp>.list-wrapper:not(.inline-icon-list)>.guten-icon-list-item:not(:last-child) {
+    padding-bottom: calc(8px/2);
+}
+
+.guten-VV6gvp.inline-icon-list>.guten-icon-list-item:not(:last-child),
+.guten-VV6gvp>.list-wrapper.inline-icon-list>.guten-icon-list-item:not(:last-child) {
+    margin-right: calc(8px/2);
+}
+
+.guten-VV6gvp.inline-icon-list>div.guten-icon-list-item:not(div:first-of-type)>a,
+.guten-VV6gvp>.list-wrapper.inline-icon-list>div.guten-icon-list-item:not(div:first-of-type)>a {
+    margin-left: calc(8px/2);
+}
+
+.guten-VV6gvp .guten-icon-list-item i {
+    color: var(--wp--preset--color--secondary);
+    font-size: 10px;
+    line-height: 1.5em;
+}
+
+.guten-VV6gvp .guten-icon-list-item .list-text {
+    color: var(--wp--preset--color--text);
+    font-family: var(--gutenverse-font-family-text);
+    font-size: var(--gutenverse-font-size-text);
+    font-weight: var(--gutenverse-font-weight-text);
+    text-transform: var(--gutenverse-font-transform-text);
+    font-style: var(--gutenverse-font-style-text);
+    text-decoration: var(--gutenverse-font-decoration-text);
+    line-height: var(--gutenverse-font-lineHeight-text);
+    letter-spacing: var(--gutenverse-font-spacing-text);
+}
+
+.guten-VV6gvp .list-wrapper .guten-icon-list-item a {
+    align-items: center
+}
+
+.guten-VV6gvp .guten-icon-list-item a,
+.guten-VV6gvp .list-wrapper .guten-icon-list-item a {
+    gap: 8px;
+}
+
+.guten-VV6gvp {}
+
+.guten-element.guten-VV6gvp {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 24px;
+    margin-left: 0px;
+}
+
+h1.guten-element.guten-b6t5gV,
+h2.guten-element.guten-b6t5gV,
+h3.guten-element.guten-b6t5gV,
+h4.guten-element.guten-b6t5gV,
+h5.guten-element.guten-b6t5gV,
+h6.guten-element.guten-b6t5gV {
+    color: var(--wp--preset--color--heading);
+    font-family: var(--gutenverse-font-family-h4);
+    font-size: var(--gutenverse-font-size-h4);
+    font-weight: var(--gutenverse-font-weight-h4);
+    text-transform: var(--gutenverse-font-transform-h4);
+    font-style: var(--gutenverse-font-style-h4);
+    text-decoration: var(--gutenverse-font-decoration-h4);
+    line-height: var(--gutenverse-font-lineHeight-h4);
+    letter-spacing: var(--gutenverse-font-spacing-h4);
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.guten-b6t5gV {}
+
+.guten-element.guten-b6t5gV {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+    margin-left: 0px;
+}
+
+.guten-j56hgF {
+    columns: 1;
+    color: var(--wp--preset--color--text);
+    font-family: var(--gutenverse-font-family-text);
+    font-size: var(--gutenverse-font-size-text);
+    font-weight: var(--gutenverse-font-weight-text);
+    text-transform: var(--gutenverse-font-transform-text);
+    font-style: var(--gutenverse-font-style-text);
+    text-decoration: var(--gutenverse-font-decoration-text);
+    line-height: var(--gutenverse-font-lineHeight-text);
+    letter-spacing: var(--gutenverse-font-spacing-text);
+}
+
+.guten-element.guten-j56hgF {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 24px;
+    margin-left: 0px;
+}
+
+h1.guten-element.guten-01pBpF,
+h2.guten-element.guten-01pBpF,
+h3.guten-element.guten-01pBpF,
+h4.guten-element.guten-01pBpF,
+h5.guten-element.guten-01pBpF,
+h6.guten-element.guten-01pBpF {
+    color: var(--wp--preset--color--heading);
+    font-family: var(--gutenverse-font-family-h4);
+    font-size: var(--gutenverse-font-size-h4);
+    font-weight: var(--gutenverse-font-weight-h4);
+    text-transform: var(--gutenverse-font-transform-h4);
+    font-style: var(--gutenverse-font-style-h4);
+    text-decoration: var(--gutenverse-font-decoration-h4);
+    line-height: var(--gutenverse-font-lineHeight-h4);
+    letter-spacing: var(--gutenverse-font-spacing-h4);
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.guten-01pBpF {}
+
+.guten-element.guten-01pBpF {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+    margin-left: 0px;
+}
+
+.guten-8M3mAz {
+    columns: 1;
+    color: var(--wp--preset--color--text);
+    font-family: var(--gutenverse-font-family-text);
+    font-size: var(--gutenverse-font-size-text);
+    font-weight: var(--gutenverse-font-weight-text);
+    text-transform: var(--gutenverse-font-transform-text);
+    font-style: var(--gutenverse-font-style-text);
+    text-decoration: var(--gutenverse-font-decoration-text);
+    line-height: var(--gutenverse-font-lineHeight-text);
+    letter-spacing: var(--gutenverse-font-spacing-text);
+}
+
+.guten-element.guten-8M3mAz {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 24px;
+    margin-left: 0px;
+}

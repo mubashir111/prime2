@@ -1,0 +1,290 @@
+/* 
+   PRIM & Associates - Service Pages CSS Overrides
+*/
+
+.service-page-wrapper {
+    padding: 80px 0;
+    background-color: var(--prim-white);
+}
+
+.service-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.service-sidebar {
+    flex: 1;
+    min-width: 300px;
+}
+
+.service-content {
+    flex: 2.5;
+}
+
+.sidebar-widget {
+    background: var(--prim-white);
+    padding: 30px;
+    border-radius: var(--prim-border-radius);
+    box-shadow: var(--prim-shadow-sm);
+    margin-bottom: 30px;
+}
+
+.sidebar-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--prim-accent-gold);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f4f8;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-list li {
+    margin-bottom: 12px;
+}
+
+.service-list a {
+    display: block;
+    padding: 12px 20px;
+    background: #f8fafd;
+    color: var(--prim-dark-slate);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--prim-transition);
+    font-weight: 500;
+}
+
+.service-list a:hover, 
+.service-list a.active {
+    background: var(--prim-accent-gold);
+    color: var(--prim-white);
+    padding-left: 25px;
+}
+
+.content-card {
+    background: var(--prim-white);
+    padding: 40px;
+    border-radius: var(--prim-border-radius);
+    box-shadow: var(--prim-shadow-sm);
+}
+
+.service-hero-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--prim-border-radius);
+    margin-bottom: 30px;
+}
+
+.service-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--prim-accent-gold);
+    margin-bottom: 20px;
+}
+
+.service-desc {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.feature-box {
+    margin-top: 40px;
+}
+
+.feature-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--prim-accent-gold);
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f8fafd;
+    border-radius: 8px;
+    transition: var(--prim-transition);
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    background: var(--prim-white);
+    box-shadow: var(--prim-shadow-sm);
+}
+
+.feature-icon {
+    color: #2a76ad;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, var(--prim-accent-gold) 0%, #2a76ad 100%);
+    padding: 40px;
+    border-radius: var(--prim-border-radius);
+    color: var(--prim-white);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: var(--prim-white);
+    color: var(--prim-accent-gold);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: var(--prim-transition);
+}
+
+.cta-btn:hover {
+    background: #f0f4f8;
+    transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+    .service-container {
+        flex-direction: column;
+    }
+    .service-sidebar {
+        order: 2;
+    }
+    .service-content {
+        order: 1;
+    }
+}
+
+/* ==========================================================================
+   Interactive Category Filter Tabs (services.html Hub)
+   ========================================================================== */
+.services-filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
+}
+
+.services-filter-tabs .filter-tab {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(19, 89, 137, 0.15);
+    padding: 10px 24px;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--prim-dark-slate);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--prim-transition);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    font-family: var(--prim-font-heading);
+    outline: none;
+}
+
+.services-filter-tabs .filter-tab:hover {
+    background: rgba(19, 89, 137, 0.05);
+    color: var(--prim-accent-gold);
+    border-color: var(--prim-accent-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(19, 89, 137, 0.08);
+}
+
+.services-filter-tabs .filter-tab.active {
+    background: var(--prim-accent-gold) !important;
+    color: var(--prim-white) !important;
+    border-color: var(--prim-accent-gold) !important;
+    box-shadow: 0 8px 18px rgba(19, 89, 137, 0.22) !important;
+}
+
+/* ==========================================================================
+   Service Directory Hub Grid & Interactive Transition/Hover
+   ========================================================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.services-grid .service-card {
+    display: block;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    transition:
+        display 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        background 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+        border-color 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+        box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    transition-behavior: allow-discrete !important;
+}
+
+.services-grid .service-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 20px 40px rgba(19, 89, 137, 0.12) !important;
+    border-color: rgba(19, 89, 137, 0.25) !important;
+    background: var(--prim-white) !important;
+}
+
+@starting-style {
+    .services-grid .service-card {
+        opacity: 0;
+        transform: scale(0.95) translateY(12px);
+    }
+}
+
+.services-grid .service-card.filtered-out {
+    animation: none !important;
+    display: none !important;
+    opacity: 0 !important;
+    transform: scale(0.95) translateY(12px) !important;
+    pointer-events: none !important;
+}
+
+/* Responsive Overrides for Services Hub */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    .services-filter-tabs {
+        gap: 8px;
+        margin-bottom: 30px;
+    }
+    
+    .services-filter-tabs .filter-tab {
+        padding: 8px 16px;
+        font-size: 13.5px;
+    }
+}
+

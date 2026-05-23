@@ -1,0 +1,24 @@
+/*
+Theme Name: Acctop
+Description: Acctop is a sleek and modern WordPress theme designed specifically for accounting businesses, firms, financial agencies, and consulting companies. With its clean layout, responsive design, and intuitive structure, Acctop helps you establish trust and professionalism online across all devices.
+Author: Jegstudio
+Author URI: https://support.jegtheme.com/
+Theme URI: https://fse.jegtheme.com/acctop
+Version: 1.0.0
+Stable tag: 1.0.0
+Requires at least: 6.2
+Tested up to: 6.5
+Requires PHP: 7.0
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: acctop
+Tags: two-columns,custom-header,full-site-editing,full-width-template,footer-widgets
+Copyright: © Jegstudio. All rights reserved.
+*/
+
+:root{
+    
+}
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .block-library-block__reusable-block-container {
+    max-width: 100%;
+}
