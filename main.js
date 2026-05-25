@@ -7,6 +7,17 @@ if (document.querySelector('.mobile-menu-toggle')) {
     });
 }
 
+// Mobile Dropdown Toggle
+document.querySelectorAll('.dropdown > a').forEach(function(dropdownLink) {
+    dropdownLink.addEventListener('click', function(e) {
+        if (window.innerWidth <= 980) {
+            e.preventDefault(); // Prevent navigating, since 'All Services' is inside
+            this.parentElement.classList.toggle('active');
+        }
+    });
+});
+
+
 // Mobile Footer Accordion
 document.querySelectorAll('.footer-toggle').forEach(function(toggle) {
     toggle.addEventListener('click', function() {
