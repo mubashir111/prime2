@@ -598,8 +598,8 @@ a {
     height: 86px;
     position: sticky;
     top: 0;
-    z-index: 20;
-    background: rgba(255, 255, 255, .85);
+    z-index: 2000;
+    background: rgba(255, 255, 255, .95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid #e8eef4;
@@ -2528,7 +2528,7 @@ a {
         flex-direction: column;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         padding: 20px 0;
-        z-index: 999;
+        z-index: 2000;
     }
 
     .main-nav.active {

@@ -17,6 +17,25 @@ document.querySelectorAll('.dropdown > a').forEach(function(dropdownLink) {
     });
 });
 
+// Desktop: allow click to open/close dropdown in webview where hover may not work
+// Desktop click toggle: target the dropdown anchor directly so pages without the
+// `dropdown-toggle` class still work.
+document.querySelectorAll('.dropdown > a').forEach(function(toggle){
+    toggle.addEventListener('click', function(e){
+        if (window.innerWidth > 980) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+        }
+    });
+});
+
+// Close dropdown if clicking outside
+document.addEventListener('click', function(e){
+    if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown.active').forEach(function(d){ d.classList.remove('active'); });
+    }
+});
+
 
 // Mobile Footer Accordion
 document.querySelectorAll('.footer-toggle').forEach(function(toggle) {
