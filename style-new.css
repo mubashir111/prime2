@@ -44,7 +44,9 @@ a {
     position: sticky;
     top: 0;
     z-index: 20;
-    background: rgba(255, 255, 255, .96);
+    background: rgba(255, 255, 255, .85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid #e8eef4;
     box-shadow: 0 3px 18px rgba(4, 35, 66, .04);
 }
@@ -226,6 +228,12 @@ a {
     font-size: 15px;
 }
 
+.trust-text {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
 .avatars {
     display: flex;
 }
@@ -362,7 +370,7 @@ a {
 }
 
 .services {
-    padding: 20px 0 28px;
+    padding: 70px 0;
     background: linear-gradient(180deg, #f4f9fe, #fff);
     border-top: 1px solid #edf3f8;
 }
@@ -413,10 +421,19 @@ a {
     font-weight: 800;
 }
 
+
+.insight-grid.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .service-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
+}
+
+.service-grid.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .service-card {
@@ -460,7 +477,7 @@ a {
 }
 
 .about {
-    padding: 42px 0 46px;
+    padding: 70px 0;
     overflow: hidden;
     background: linear-gradient(90deg, #fff 0%, #fff 58%, #edf7ff 100%);
     border-top: 1px solid #eef4fa;
@@ -502,12 +519,13 @@ a {
 }
 
 .values div {
-    min-height: 83px;
+    min-height: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
+    padding: 24px 20px;
     text-align: center;
     border-right: 1px solid #cfdae5;
 }
@@ -613,7 +631,7 @@ a {
 }
 
 .why {
-    padding: 40px 0 46px;
+    padding: 70px 0;
     border-top: 1px solid #eef3f8;
 }
 
@@ -709,7 +727,7 @@ a {
 }
 
 .testimonials {
-    padding: 46px 0 36px;
+    padding: 70px 0;
     background: #fff;
     border-top: 1px solid #e8eef5;
 }
@@ -753,9 +771,15 @@ a {
     min-height: 181px;
     padding: 25px 28px;
     color: #fff;
-    border-radius: 8px;
+    border-radius: 12px;
     background: linear-gradient(135deg, #05213d, #063b6d);
-    box-shadow: 0 9px 25px rgba(4, 34, 63, .14);
+    box-shadow: 0 15px 35px rgba(4, 34, 63, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(4, 34, 63, 0.28);
 }
 
 .stars {
@@ -841,7 +865,7 @@ a {
 }
 
 .insights {
-    padding: 28px 0 34px;
+    padding: 70px 0;
 }
 
 .section-head.compact {
@@ -1069,16 +1093,22 @@ a {
     .hero-grid,
     .about-grid,
     .why-grid,
-    .services-layout {
+    .services-layout,
+    .service-detail,
+    .service-detail.reverse,
+    .culture-section,
+    .values,
+    .insight-grid,
+    .insight-grid.grid-2 {
         grid-template-columns: 1fr;
     }
 
     .hero-media {
-        min-height: 430px;
+        min-height: 320px;
+        object-fit: cover;
     }
 
     .service-grid,
-    .insight-grid,
     .testimonial-wrap,
     .footer-grid {
         grid-template-columns: 1fr 1fr;
@@ -1118,6 +1148,7 @@ a {
 
     .service-grid,
     .insight-grid,
+    .insight-grid.grid-2,
     .testimonial-wrap,
     .footer-grid,
     .values,
@@ -1126,18 +1157,50 @@ a {
     }
 
     .about-media {
-        height: 520px;
+        height: 220px;
     }
 
-    .about-media .wide,
-    .about-media .lower {
+    .about-media .wide {
         width: 100%;
         left: 0;
         right: auto;
+        height: 220px;
+    }
+
+    .about-media .lower,
+    .metric.top {
+        display: none;
+    }
+
+    .metric {
+        width: 110px;
+        padding: 10px;
     }
 
     .metric.bottom {
-        right: 16px;
+        width: 110px;
+        right: 10px;
+        bottom: -15px;
+    }
+
+    .metric b {
+        font-size: 18px;
+        margin-top: 6px;
+    }
+    
+    .metric span {
+        margin-top: 6px;
+        width: 50px;
+        height: 3px;
+    }
+    
+    .metric small {
+        font-size: 10px;
+    }
+
+    .footer a {
+        padding: 8px 0;
+        margin: 0;
     }
 }
 
@@ -1627,12 +1690,8 @@ a {
 
 @media (max-width: 980px) {
 
-    .service-detail,
-    .contact-grid,
-    .blog-layout,
-    .featured-article,
-    .culture-section {
-        grid-template-columns: 1fr;
+    .service-detail.reverse .service-detail-content {
+        order: 0;
     }
 
     .team-grid {
@@ -1965,7 +2024,7 @@ a {
         gap: 15px;
     }
 
-    .service-grid {
+    .service-grid, .service-grid.grid-4 {
         grid-template-columns: 1fr;
     }
 
@@ -2059,8 +2118,8 @@ a {
     }
 
     /* Insights */
-    .insight-grid {
-        grid-template-columns: 1fr;
+    .insight-grid, .insight-grid.grid-2 {
+        grid-template-columns: 1fr 1fr;
     }
 
     .post-card {
@@ -2247,5 +2306,344 @@ a {
 
     .feature-list .feature-item:nth-child(4) {
         transition-delay: 0.4s;
+    }
+}
+/* --- Final Polish Additions --- */
+
+@media (max-width: 768px) {
+    .service-card p, .post-card p, .testimonial-card p {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .post-card {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 16px;
+        align-items: center;
+        text-align: left;
+    }
+    .post-card img {
+        grid-row: 1 / 5;
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        margin: 0;
+        border-radius: 8px;
+    }
+    .post-card h3 {
+        font-size: 15px;
+        margin: 6px 0 4px;
+        line-height: 1.4;
+    }
+    .post-card p {
+        display: none;
+    }
+    .post-card span {
+        margin: 0;
+        align-self: end;
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+    .post-card small {
+        margin: 0;
+        align-self: start;
+        font-size: 10px;
+    }
+    
+    .brand img {
+        max-width: 130px;
+    }
+    .header-inner {
+        padding: 16px 10px;
+    }
+    .mobile-menu-btn {
+        margin-top: 4px;
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Massive Mobile Overhaul --- */
+@media (max-width: 768px) {
+    /* 1. Hero Section */
+    .hero {
+        text-align: left;
+    }
+    .hero-copy, .hero-copy h1, .hero-copy p, .trust-row {
+        text-align: left;
+        justify-content: flex-start;
+    }
+    .trust-text {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+    .desktop-only {
+        display: none;
+    }
+    .eyebrow {
+        margin: 0 0 16px 0;
+        display: inline-block;
+    }
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .hero-media {
+        min-height: auto;
+        padding-top: 20px;
+        margin-bottom: 50px;
+        display: block;
+        position: relative;
+    }
+    .hero-photo {
+        position: relative;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+    }
+    .stat-card.hero-stat {
+        position: absolute;
+        bottom: -30px;
+        left: 16px;
+        margin: 0;
+        width: calc(100% - 32px);
+        z-index: 10;
+        text-align: left;
+    }
+    
+    /* 2. Core Services */
+    .services-layout .section-intro, .insights .section-head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        text-align: left !important;
+        gap: 0;
+    }
+    .services-layout .section-intro h2, .insights .section-head h2 {
+        text-align: left;
+        margin: 0;
+    }
+    .service-grid, .service-grid.grid-4,
+    .insight-grid, .insight-grid.grid-2,
+    .values {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .service-card {
+        display: grid;
+        grid-template-columns: 40px 1fr 20px;
+        align-items: center;
+        gap: 12px;
+        padding: 16px;
+        min-height: auto;
+    }
+    .service-card > i {
+        margin: 0;
+        font-size: 24px;
+        grid-row: 1 / 3;
+    }
+    .service-card h3 {
+        margin: 0;
+        font-size: 16px;
+    }
+    .service-card p {
+        margin: 4px 0 0;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+    }
+    .service-card a {
+        display: none;
+    }
+    .service-card::after {
+        content: '\f054';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        color: var(--blue);
+        grid-row: 1 / 3;
+        grid-column: 3;
+        text-align: right;
+    }
+    
+    /* 3. About Stats */
+    .about-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    .stat-box {
+        background: #fff;
+        padding: 20px 12px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        text-align: center;
+        border: 1px solid #edf3f8;
+    }
+    .stat-box strong {
+        font-size: 24px;
+        color: var(--blue);
+        display: block;
+        margin-bottom: 4px;
+    }
+    .stat-box span {
+        font-size: 12px;
+        color: var(--muted);
+    }
+    .about-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        margin-top: 24px;
+    }
+    .about-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* 4. Why Choose Us */
+    .why-copy {
+        counter-reset: why;
+    }
+    .why .reason {
+        display: flex;
+        gap: 16px;
+        text-align: left;
+        margin-bottom: 24px;
+    }
+    .why .reason strong {
+        display: none;
+    }
+    .why .reason::before {
+        counter-increment: why;
+        content: "0" counter(why);
+        width: 40px;
+        height: 40px;
+        background: #f0f6ff;
+        color: var(--blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+    .why .reason h3 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+    
+    /* 5. Premium Testimonial */
+    .testimonial-card {
+        background: #0b2c6b;
+        color: #fff;
+        border-radius: 16px;
+    }
+    .testimonial-card p {
+        color: #fff !important;
+    }
+    .testimonial-card .client b {
+        color: #fff !important;
+    }
+    .testimonial-card .client small {
+        color: rgba(255,255,255,0.7) !important;
+    }
+    .testimonial-card::before {
+        content: '\f10d';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        color: rgba(255,255,255,0.1);
+        font-size: 40px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .stars {
+        color: #f59e0b;
+    }
+    
+    /* 6. Newsletter & Grow Card */
+    .newsletter, .grow-card {
+        background: #0b2c6b;
+        color: #fff;
+        border-radius: 16px;
+    }
+    .newsletter h3, .grow-card h3 {
+        color: #fff !important;
+    }
+    .newsletter p, .grow-card p {
+        color: rgba(255,255,255,0.8) !important;
+    }
+    .newsletter form {
+        position: relative;
+        background: #fff;
+        border-radius: 8px;
+        padding: 4px;
+        display: flex;
+    }
+    .newsletter input {
+        border: none;
+        background: transparent;
+        flex: 1;
+        padding: 10px;
+    }
+    .newsletter button {
+        background: transparent;
+        color: var(--blue);
+        border: none;
+        width: 40px;
+    }
+    .grow-card .btn.primary {
+        background: #fff;
+        color: #0b2c6b;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* 7. Footer Accordion */
+    .footer-brand {
+        margin-bottom: 32px;
+    }
+    .footer-accordion {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        margin-bottom: 0;
+        padding: 16px 0;
+    }
+    .footer-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 !important;
+        font-size: 15px !important;
+        cursor: pointer;
+    }
+    .footer-content {
+        display: none;
     }
 }

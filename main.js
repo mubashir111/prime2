@@ -125,3 +125,21 @@ setTimeout(() => {
         if(spans.length > 0) spans[0].style.background = '#004887';
     }
 }, 100);
+
+// Scroll animations
+document.addEventListener('DOMContentLoaded', () => {
+    const revealElements = document.querySelectorAll('.service-card, .post-card, .testimonial-card, .grow-card, .section-head, .why-card');
+    
+    revealElements.forEach(el => el.classList.add('reveal'));
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+    
+    revealElements.forEach(el => revealObserver.observe(el));
+});
