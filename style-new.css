@@ -1927,9 +1927,11 @@ a {
     }
 
     .call-btn {
-        padding: 8px 16px;
-        font-size: 13px;
+        min-width: auto;
+        padding: 8px 14px;
+        font-size: 12px;
         border-radius: 30px;
+        gap: 8px;
     }
 
     .main-nav {
