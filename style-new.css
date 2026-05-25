@@ -5104,7 +5104,7 @@ a {
         column-gap: 14px !important;
         row-gap: 0 !important;
         align-items: start !important;
-        margin: 0 0 24px !important;
+        margin: 24px 0 24px !important;
     }
 
     body:not(.about-page):not(.team-page) .why .reason strong {
