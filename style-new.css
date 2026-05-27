@@ -599,10 +599,10 @@ a {
     position: sticky;
     top: 0;
     z-index: 2000;
-    background: rgba(255, 255, 255, .95);
+    background: rgba(255, 255, 255, .7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid #e8eef4;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 3px 18px rgba(4, 35, 66, .04);
 }
 
@@ -5342,4 +5342,67 @@ a {
         display: none !important;
         content: none !important;
     }
+}
+
+/* --- Premium UI Enhancements --- */
+
+/* 2 & 4. Group Hover Card Effects */
+.post-card, .service-card, .vision-card {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+.grow-card {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+.post-card:hover, .service-card:hover, .vision-card:hover, .grow-card:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
+    transform: translateY(-5px) !important;
+}
+.post-card h3, .service-card h3 {
+    transition: color 0.3s ease;
+}
+.post-card:hover h3, .service-card:hover h3 {
+    color: var(--blue);
+}
+.post-card::after {
+    content: "→";
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.post-card:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+.service-card > a {
+    transition: transform 0.3s ease;
+}
+.service-card:hover > a {
+    transform: translateX(5px);
+}
+
+/* 3. Ambient Glow Gradients */
+main {
+    position: relative;
+    overflow: hidden;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background-color: rgba(0, 72, 135, 0.08); /* Matches theme blue */
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+    pointer-events: none;
 }
