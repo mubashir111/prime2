@@ -173,3 +173,49 @@ document.addEventListener('DOMContentLoaded', () => {
     
     revealElements.forEach(el => revealObserver.observe(el));
 });
+
+// --- Premium Animation Polish ---
+document.addEventListener('DOMContentLoaded', () => {
+    // 2. Staggered Text Reveals (Hero Section)
+    const heroElements = document.querySelectorAll('.hero-copy > span, .hero-copy h1, .hero-copy p, .hero-actions');
+    heroElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = `all 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.15}s`;
+        
+        setTimeout(() => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, 150);
+    });
+
+    // 3. Magnetic Hover Buttons
+    const buttons = document.querySelectorAll('.btn, .call-btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0px, 0px)';
+        });
+    });
+
+    // 5. Subtle Parallax on Hero Images
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        
+        const heroPhoto = document.querySelector('.hero-photo');
+        if (heroPhoto) {
+            heroPhoto.style.transform = `translateY(${scrolled * 0.15}px)`;
+        }
+        
+        const dotPattern = document.querySelector('.hero');
+        if (dotPattern) {
+            dotPattern.style.backgroundPosition = `0 ${scrolled * -0.05}px`;
+        }
+    });
+});

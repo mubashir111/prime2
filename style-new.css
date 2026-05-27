@@ -5406,3 +5406,15 @@ body::before {
     z-index: -1;
     pointer-events: none;
 }
+
+/* --- Premium Animation Polish --- */
+.btn {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s, color 0.3s, box-shadow 0.3s !important;
+}
+.service-card i {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.service-card:hover i {
+    transform: scale(1.15) rotate(-5deg);
+    color: var(--blue);
+}
