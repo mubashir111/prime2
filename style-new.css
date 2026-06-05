@@ -720,7 +720,10 @@ a {
 .why h2 span,
 .section-head h2 span {
     color: var(--blue);
-    border-bottom: 5px solid var(--blue);
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--blue);
 }
 
 .hero p {
@@ -750,6 +753,11 @@ a {
     font-size: 12px;
     font-weight: 800;
     border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.btn i {
+    transition: transform 0.3s ease;
 }
 
 .btn.primary {
@@ -758,10 +766,22 @@ a {
     box-shadow: 0 8px 16px rgba(0, 62, 117, .14);
 }
 
+.btn.primary:hover {
+    box-shadow: 0 12px 24px rgba(0, 62, 117, .2);
+}
+
+.btn.primary:hover i {
+    transform: translateX(4px);
+}
+
 .btn.outline {
     color: var(--blue);
     background: #fff;
     border-color: var(--blue);
+}
+
+.btn.outline:hover {
+    background: #f0f7ff;
 }
 
 .btn.small {
@@ -908,7 +928,25 @@ a {
 
 .flags {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.flag-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.flag-item small {
+    margin: 0 !important;
+    font-size: 11px !important;
+    line-height: 1;
+    transform: translateY(0.5px);
+    color: #44505f;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .flags span {
@@ -919,6 +957,7 @@ a {
     border-left: 5px solid #000;
 }
 
+.flags .flag-item:nth-child(2) span,
 .flags span+span {
     border-left: 0;
     background: linear-gradient(#ff9933 0 33%, #fff 33% 66%, #138808 66%);
@@ -948,7 +987,7 @@ a {
     margin: 0;
     color: #0b1728;
     font-size: 34px;
-    line-height: 1.12;
+    line-height: 1.25;
     letter-spacing: 0;
 }
 
@@ -1587,6 +1626,7 @@ a {
 .footer img {
     width: 164px;
     margin-bottom: 12px;
+    filter: brightness(0) invert(1);
 }
 
 .footer h3 {
@@ -1667,9 +1707,19 @@ a {
     }
 
     .service-grid,
-    .testimonial-wrap,
-    .footer-grid {
+    .testimonial-wrap {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .footer-grid > div:first-child {
+        grid-column: 1 / -1;
+        max-width: 400px;
+        margin-bottom: 20px;
     }
 
     .slide-btn {
@@ -4635,7 +4685,7 @@ a {
 
     body:not(.about-page):not(.team-page) .eyebrow,
     body:not(.about-page):not(.team-page) .section-label {
-        color: #004887;
+        color: #082543; /* Darkened from #004887 for absolute perfect WCAG AAA contrast */
         background: transparent;
         padding: 0;
         border-radius: 0;
